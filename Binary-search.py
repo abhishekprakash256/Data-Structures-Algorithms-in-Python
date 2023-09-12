@@ -24,7 +24,6 @@ test1 = {
 }
 
 
-
 test2 = {
 	'input': {
 	'cards': [15,12,10,9,8,6,5],
@@ -85,8 +84,67 @@ class Solution:
 
 
 
+	def find_element_binary_search(self,lst,query) -> int:
+		"""
+		The function to find the element with binary search 
+		Args:
+			lst (list) : list of the elements
+			query (int) : The element to search for 
+		Return: 
+			pos (int) : The index value of the element 	
+
+		"""
+
+		left = 0 
+		right = len(lst) - 1
+
+		#start the loop for search 
+
+		while left <= right:
+
+			mid = (left + right) // 2
+
+			print(lst[mid])
+
+			if lst[mid] == query:
+				return mid
+
+			elif query < lst[mid]:
+				right = mid - 1
+
+			else:
+				left = mid + 1
 
 
+		return -1
+
+	
+
+"""
+	def binary_search(self,arr, x):
+	    low = 0
+	    high = len(arr) - 1
+	    mid = 0
+	 
+	    while low <= high:
+	 
+	        mid = (high + low) // 2
+	 
+	        # If x is greater, ignore left half
+	        if arr[mid] < x:
+	            low = mid + 1
+	 
+	        # If x is smaller, ignore right half
+	        elif arr[mid] > x:
+	            high = mid - 1
+	 
+	        # means x is present at mid
+	        else:
+	            return mid
+	 
+	    # If we reach here, then the element was not present
+	    return -1
+"""
 
 
 
@@ -99,7 +157,32 @@ if __name__ == "__main__":
 	res3 = sol.find_element_brute_force(test3['input']['cards'], test3['input']['query'])
 	res4 = sol.find_element_brute_force(test4['input']['cards'], test4['input']['query'])
 
+
+
+	res5 = sol.find_element_binary_search(test1['input']['cards'], test1['input']['query'])
+	res6 = sol.find_element_binary_search(test2['input']['cards'], test2['input']['query'])
+	res7 = sol.find_element_binary_search(test3['input']['cards'], test3['input']['query'])
+	res8 = sol.find_element_binary_search(test4['input']['cards'], test4['input']['query'])
+
+	#res9 = sol.binary_search(test1['input']['cards'], test1['input']['query'])
+	#res10 = sol.binary_search(test2['input']['cards'], test2['input']['query'])
+	#res11= sol.binary_search(test3['input']['cards'], test3['input']['query'])
+	#res12 = sol.binary_search(test4['input']['cards'], test4['input']['query'])
+
+
+
 	print(res == test1['output'])
 	print(res2 == test2['output'])
 	print(res3 == test3['output'])
 	print(res4 == test4['output'])
+
+
+
+	print("-----------------------------------------binary search -------------------------------------------")
+
+
+
+	print(res5 == test1['output'])
+	print(res6 == test2['output'])
+	print(res7 == test3['output'])
+	print(res8 == test4['output'])
