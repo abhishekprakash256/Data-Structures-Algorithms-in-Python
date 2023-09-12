@@ -9,6 +9,7 @@ brute force appraoch
 
 do a linear scan and spit out the reslut for the position 
 
+
 """
 
 
