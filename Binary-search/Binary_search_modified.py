@@ -27,8 +27,8 @@ class Modify_Sol(Solution):
             if (lst[mid] == query and lst[mid - 1] != query) or (lst[mid] == query and lst[mid] == 0  ):
                 return mid
 
-            else:
-                right = mid - 1  
+
+
 
 
 
