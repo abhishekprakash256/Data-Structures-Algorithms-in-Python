@@ -105,12 +105,12 @@ class Solution:
 
 			mid = (left + right) // 2
 
-			print(lst[mid])
+			#print(lst[mid])
 
 			if lst[mid] == query:
 				return mid
 
-			elif query < lst[mid]:
+			elif query > lst[mid]:
 				right = mid - 1
 
 			else:
