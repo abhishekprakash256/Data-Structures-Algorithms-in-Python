@@ -16,7 +16,7 @@ class Modify_Sol(Solution):
             left: (int): The pointer index value
             right: (int): The pointer index value 
         
-        Return:
+        Return:  
             index (int): The index value of the query  
         """
 
@@ -26,9 +26,6 @@ class Modify_Sol(Solution):
 
             if (lst[mid] == query and lst[mid - 1] != query) or (lst[mid] == query and lst[mid] == 0  ):
                 return mid
-
-
-
 
 
 
