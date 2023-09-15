@@ -2,32 +2,12 @@
 The implementation of the modified binary search 
 for the repetative element in the list
 """
+#----------------------------------the working code for the problem---------------------------------------------#
+
 
 from Binary_search import * 
 
-
 class Modify_Sol(Solution):
-    def return_val(self,lst,left,right):
-        """
-        The function to check for duplicate value and return val
-        
-        Args:
-            lst (list): The list of the numbers 
-            left: (int): The pointer index value
-            right: (int): The pointer index value 
-        
-        Return:  
-            index (int): The index value of the query  
-        """
-
-        while left <= right:
-
-            mid = (left + right) // 2 
-
-            if (lst[mid] == query and lst[mid - 1] != query) or (lst[mid] == query and lst[mid] == 0  ):
-                return mid
-
-
 
     def modified_binary_search(self,lst,query)-> int:
         """
@@ -45,15 +25,19 @@ class Modify_Sol(Solution):
 
         while left <= right:
 
-            mid = (left+right) // 2          
+            mid = (left+right) // 2
 
-            if lst[mid] == query and mid !=0 and lst[mid-1] == query:
-                self.return_val(lst,left,right)
-
-            elif lst[mid] == query and lst[mid - 1] != query:
-                return mid  
-            
-            elif lst[mid] < query:
+            if lst[mid] == query:
+                
+                if mid == 0:
+                    return mid
+                
+                elif lst[mid - 1] > query:
+                    return mid
+                else:
+                    right = mid - 1        
+ 
+            elif lst[mid] > query:
 
                 left = mid + 1
 
@@ -62,3 +46,11 @@ class Modify_Sol(Solution):
 
         return -1
 
+
+if __name__ == "__main__":
+    sol = Modify_Sol()
+    res = sol.modified_binary_search(test3['input']['cards'], test3['input']['query'])
+    res2 = sol.modified_binary_search(test5['input']['cards'], test5['input']['query'])
+
+    print(res == test3['output'])
+    print(res2 == test5['output'])
