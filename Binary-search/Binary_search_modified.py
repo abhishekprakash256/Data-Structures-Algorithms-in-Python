@@ -48,6 +48,7 @@ class Modify_Sol(Solution):
         return -1
 
 
+
 if __name__ == "__main__":
     sol = Modify_Sol()
     res = sol.modified_binary_search(test3['input']['cards'], test3['input']['query'])
