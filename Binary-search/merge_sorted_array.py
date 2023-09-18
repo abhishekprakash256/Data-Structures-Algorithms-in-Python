@@ -18,3 +18,100 @@ test1 = {
 
 	'output': [1,2,3,4,5,6]
 }  
+
+
+test2 = {
+	'input': {
+	'lst': [1,2,3],
+    'lst2':[3,3,3],
+	},
+
+	'output': [1,2,3,3,3,3]
+}
+
+
+test3 = {
+	'input': {
+	'lst': [1],
+    'lst2':[3,3,3],
+	},
+
+	'output': [1,3,3,3]
+}
+
+test4 = {
+	'input': {
+	'lst': [1,2,3,7,8,9],
+    'lst2':[4,5,6],
+	},
+
+	'output': [1,2,3,4,5,6,7,9]
+}
+
+
+
+
+class Solution:
+	def merge_list(self,lst1,lst2):
+		"""
+		The function to merge to sorted list
+		Args:
+			lst1 (list): The list of sorted integers
+			lst2 (list): The list of sorted integers
+
+		Returns:
+
+			sorted_lst (list) : The merged sorted list of integers 
+		"""
+
+		len1 = len(lst1)
+		len2 = len(lst2)
+		merge_lst = []
+		left = 0
+		right = 0
+
+
+		while len(merge_lst) < len1 + len2 :
+
+			if left == len(len1) - 1:
+
+				merge_lst.append(lst2[right])
+				right +=1
+
+			elif right == len(len2) - 1:
+
+				merge_lst.append(lst1[left])
+				left +=1
+
+			elif lst1[left] == lst2[right]:
+
+				merge_lst.append(lst1[left])
+				merge_lst.append(lst2[right])
+
+				left+=1
+				right+=1
+
+			elif lst1[left] < lst2[right]:
+
+				merge_lst.append(lst1[left])
+
+				left+=1
+
+			else:
+
+				merge_lst.append(lst2[right])
+
+				right+=1
+
+		return merge_lst
+
+
+
+
+
+
+if __name__ == "__main__":
+	sol = Solution()
+
+
+	#res = sol.merge_lst(test1[]) 
