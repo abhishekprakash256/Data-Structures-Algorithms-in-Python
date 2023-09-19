@@ -5,11 +5,9 @@ Merge nums1 and nums2 into a single array sorted in non-decreasing order.
 
 The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
 
- 
+
 """
 
-
-#----------------problem with index out of bound------------------------------#
 
 #make the test cases 
 
@@ -54,11 +52,11 @@ test4 = {
 
 
 
-
 class Solution:
-	def merge_list(self,lst1,lst2):
+	def merge_sorted_array(self,lst1,lst2):
 		"""
-		The function to merge to sorted list
+		The function to merge the two sorted array 
+
 		Args:
 			lst1 (list): The list of sorted integers
 			lst2 (list): The list of sorted integers
@@ -67,57 +65,26 @@ class Solution:
 			sorted_lst (list) : The merged sorted list of integers 
 		"""
 
+		merge_lst
+
 		len1 = len(lst1)
 		len2 = len(lst2)
-		merge_lst = []
-		left = 0
-		right = 0
 
 
-		while len(merge_lst) <= len1 + len2 :
-
-			if left == len(lst1) - 1:
-
-				merge_lst.append(lst2[right])
-				right +=1
-
-			elif right == len(lst2) - 1:
-
-				merge_lst.append(lst1[left])
-				left +=1
-
-			elif lst1[left] == lst2[right]:
-
-				merge_lst.append(lst1[left])
-				merge_lst.append(lst2[right])
-
-				left+=1
-				right+=1
-
-			elif lst1[left] < lst2[right]:
-
-				merge_lst.append(lst1[left])
-
-				left+=1
-
-			else:
-
-				merge_lst.append(lst2[right])
-
-				right+=1
-
-			print(merge_lst)
-
-		return merge_lst
+		left = 0 
+		right = 0 
 
 
+		while left + right <= (len1 + len2) - 2 :
+
+			if left == len1 - 1 :
+				
+				
+
+			elif right == len2 - 1:
+
+				pass
 
 
-if __name__ == "__main__":
-	sol = Solution()
+			return merge_lst
 
-
-
-	#res = sol.merge_list(test1['input']['lst'],test1['input']['lst2'])
-
-	res2 = sol.merge_list(test2['input']['lst'],test2['input']['lst2'])
