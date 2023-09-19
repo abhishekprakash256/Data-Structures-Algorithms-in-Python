@@ -78,7 +78,8 @@ class Solution:
 		while left + right <= (len1 + len2) - 2 :
 
 			if left == len1 - 1 :
-				
+
+				merge_lst.append(lst1[])
 				
 
 			elif right == len2 - 1:
