@@ -65,7 +65,7 @@ class Solution:
 			sorted_lst (list) : The merged sorted list of integers 
 		"""
 
-		merge_lst
+		merge_lst = []
 
 		len1 = len(lst1)
 		len2 = len(lst2)
@@ -75,17 +75,51 @@ class Solution:
 		right = 0 
 
 
-		while left + right <= (len1 + len2) - 2 :
+		while len(merge_lst) >= (len1 + len2):
 
-			if left == len1 - 1 :
+			if left == len1:
 
-				merge_lst.append(lst1[])
-				
-
-			elif right == len2 - 1:
-
-				pass
+				merge_lst.append(lst2[right])
+				right +=1
 
 
-			return merge_lst
+			elif right == len2:
+
+				merge_lst.append(lst1[left])
+				left +=1
+
+
+			elif lst1[left] < lst2[right]:
+
+				merge_lst.append(lst1[left])
+				left+=1
+
+			elif lst2[right] < lst1[left]:
+
+				merge_lst.append(lst2[right])
+				right+=1
+
+			else:
+
+				merge_lst.append(lst1[left])
+				merge_lst.append(lst2[right])
+
+				left +=1
+				right+=1
+
+
+		return merge_lst
+
+
+
+if __name__ == "__main__":
+	sol = Solution()
+
+
+	res = sol.merge_sorted_array(test2['input']['lst'],test2['input']['lst2'])
+
+
+	print(res)
+
+
 
