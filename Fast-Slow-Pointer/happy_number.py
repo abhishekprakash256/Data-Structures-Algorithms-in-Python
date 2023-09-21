@@ -11,7 +11,7 @@ so 28 is a happy number
 """
 
 #------------------------------------code works and passes all tests --------------------------------------
-
+#--------------naive approach 
 #test cases
 
 test1 = {
