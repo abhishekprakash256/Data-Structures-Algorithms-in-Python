@@ -85,17 +85,15 @@ class Solution:
             nums = num_sum
 
             if num_sum in mapper:
-                return False
                 break
             
             elif num_sum == 1:
                 return True
-                break 
-            
+
             else:
                 mapper[num_sum] = True
 
-
+        return False
 
 if __name__ == "__main__":
     sol = Solution()
