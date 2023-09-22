@@ -30,7 +30,7 @@ test4 = {
 
 
 class Solution:
-	def find_duplicate(self,duo_lst):
+	def find_duplicate(self,dup_lst):
 		"""
 		The function to find the duolicate number in the list
 		Args:
@@ -39,9 +39,27 @@ class Solution:
 			repeated_num (int) : the repeated number in the list
 		"""
 
+		if len(dup_lst) == 0 or len(dup_lst) == 0:
+			return None
+
 		slow = 0 
-		fastt = slow + 2
+		fast = slow + 2
+		count = 0
+		length = len(duo_lst)
 
-		while  
+		while True:
 
+			if duo_lst[slow] == duo_lst[fast]:
+
+				count +=1
+				slow = 0 
+
+				if count == 2 :
+
+					return fast
+
+			slow +=1
+			fast +=2
+
+		return 
 
