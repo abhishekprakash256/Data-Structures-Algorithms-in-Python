@@ -2,14 +2,11 @@
 To find the dupliacte number in the list 
 using the fast and the slow pointer and without using the extra space 
 """
-
-#test cases 
-
-
+#----------------------------- the soln works and passes the test cases ------------------
 #test cases
 
 test1 = {
-	'input': [3,4,5,7,1,8,7],
+	'input': [3,4,5,5,1,6,5],
 	'output': 7
 }
 
@@ -30,7 +27,7 @@ test4 = {
 
 
 class Solution:
-	def find_duplicate(self,dup_lst):
+	def find_duplicate(self,nums):
 		"""
 		The function to find the duolicate number in the list
 		Args:
@@ -39,27 +36,26 @@ class Solution:
 			repeated_num (int) : the repeated number in the list
 		"""
 
-		if len(dup_lst) == 0 or len(dup_lst) == 0:
-			return None
-
-		slow = 0 
-		fast = slow + 2
-		count = 0
-		length = len(duo_lst)
-
+		fast = slow = nums[0]
+	
 		while True:
+			slow = nums[slow]
+			fast = nums[nums[fast]]
+			if slow == fast:
+				break
+		
+		slow = nums[0]
+	
+		while slow != fast:
+			slow = nums[slow]
+			fast = nums[fast]
+		
+		return fast
 
-			if duo_lst[slow] == duo_lst[fast]:
 
-				count +=1
-				slow = 0 
 
-				if count == 2 :
+if __name__ == "__main__":
+	sol = Solution()
+	res = sol.find_duplicate(test1['input'])
 
-					return fast
-
-			slow +=1
-			fast +=2
-
-		return 
-
+	print(res)
