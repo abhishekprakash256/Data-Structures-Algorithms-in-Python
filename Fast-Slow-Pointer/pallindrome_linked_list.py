@@ -5,6 +5,8 @@ Return TRUE if the linked list is a palindrome; otherwise, return FALSE.
 
 """
 
+#-------------------------------------the file that helps to rotate the linked list ----------------------------
+
 from linked_list_node import * 
 from linked_list import *
 
@@ -42,19 +44,16 @@ class LinkedList_helper(LinkedList):
 
     def reverse_lst(self,node):
 
-        temp = node.next
-        prev = node
+        prev , curr = None, node
 
-        while True:
+        while curr:
 
-            if temp.next is None:
-                break
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
 
-            temp2 = temp 
-            temp = temp.next
-            temp2.next = prev
-            prev = prev.next
-
+        return prev
         
             
 
