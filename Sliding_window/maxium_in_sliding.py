@@ -1,6 +1,8 @@
 """
 Given an integer list, nums, find the maximum values in all the contiguous subarrays (windows) of size w.
 
+print(lst1.pop(0))
+
 """
 
 
@@ -23,4 +25,7 @@ class Solution:
 
 
 		"""
-		pass
+		lst_queue = []
+
+		for i in lst:
+			pass
