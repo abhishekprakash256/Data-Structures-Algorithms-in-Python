@@ -5,6 +5,7 @@ print(lst1.pop(0))
 
 """
 
+#-----------------problem in poppin the elements of the stack 
 
 #for this question we need to make a deccreasing monotonic queue 
 
@@ -27,5 +28,29 @@ class Solution:
 		"""
 		lst_queue = []
 
-		for i in lst:
-			pass
+		#append the first value 
+		lst_queue.append(lst[0])
+
+		#start the comparision and popping 
+
+		for i in range(1,len(lst)-1):
+
+			while True:
+
+				print(lst_queue)
+
+				if lst_queue[len(lst_queue)-1] > i:
+
+					lst_queue.append(i)
+
+				else:
+					lst_queue.pop(0)
+
+		return lst_queue 
+
+
+if __name__ == "__main__":
+	sol = Solution()
+	res = sol.decrease_queue(lst2)
+
+	print(res)
