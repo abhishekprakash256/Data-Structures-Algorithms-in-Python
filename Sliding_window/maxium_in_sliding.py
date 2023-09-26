@@ -52,6 +52,14 @@ class Solution:
 
 		return lst_queue
 
+	def maximum_window(self,lst):
+		"""
+		The maximum sliding window finding on the stack
+
+		"""
+
+		pass
+
 
 
 if __name__ == "__main__":
