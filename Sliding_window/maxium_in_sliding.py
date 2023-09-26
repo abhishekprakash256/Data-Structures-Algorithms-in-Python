@@ -5,17 +5,17 @@ print(lst1.pop(0))
 
 """
 
-#-----------------problem in poppin the elements of the stack 
+#-----------------code fixed for popping of the monotonic stack------------------------
 
 #for this question we need to make a deccreasing monotonic queue 
 
 
 #test cases
 
-lst1 = [4,5,2,4,4,6,1,7,8,0]
+lst1 = [4,5,4,4,6,1,7,8,0]
 
 
-lst2 = [8,6,4,7,0,1,4,3,6,4]
+lst2 = [8,6,4,7,0,1,4,3,6,41]
 
 
 
@@ -28,29 +28,34 @@ class Solution:
 		"""
 		lst_queue = []
 
-		#append the first value 
-		lst_queue.append(lst[0])
-
 		#start the comparision and popping 
 
-		for i in range(1,len(lst)-1):
+		for i in lst:
 
+			#monotonic decreasing
 			while True:
 
-				print(lst_queue)
+				if len(lst_queue) == 0:
 
-				if lst_queue[len(lst_queue)-1] > i:
+					lst_queue.append(i)
+					break
+
+				elif lst_queue[len(lst_queue) - 1]  >= i:
 
 					lst_queue.append(i)
 
+					break
+
 				else:
+
 					lst_queue.pop(0)
 
-		return lst_queue 
+		return lst_queue
+
 
 
 if __name__ == "__main__":
 	sol = Solution()
-	res = sol.decrease_queue(lst2)
+	res = sol.decrease_queue(lst1)
 
 	print(res)
