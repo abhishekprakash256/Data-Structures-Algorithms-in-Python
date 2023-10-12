@@ -15,7 +15,7 @@ print(lst1.pop(0))
 lst1 = [4,5,4,4,6,1,7,8,0]
 
 
-lst2 = [8,6,4,7,0,1,4,3,6,41]
+lst2 = [8,6,4,7,0,1,4,3,6,4,3,2,1,0]
 
 
 
@@ -23,7 +23,6 @@ class Solution:
 	def decrease_queue(self,lst):
 		"""
 		The function to make the decreasing queue
-
 
 		"""
 		lst_queue = []
@@ -52,18 +51,20 @@ class Solution:
 
 		return lst_queue
 
-	def maximum_window(self,lst):
+	def maximum_window(self,lst,k):
 		"""
 		The maximum sliding window finding on the stack
 
 		"""
 
-		pass
+		
+
+		
 
 
 
 if __name__ == "__main__":
 	sol = Solution()
-	res = sol.decrease_queue(lst1)
+	res = sol.decrease_queue(lst2)
 
 	print(res)
