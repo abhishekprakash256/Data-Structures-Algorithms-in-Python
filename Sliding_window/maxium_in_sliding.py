@@ -56,6 +56,7 @@ class Solution:
 		The maximum sliding window finding on the stack
 
 		"""
+		pass
 
 		
 
